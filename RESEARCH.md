@@ -19,7 +19,9 @@ The main result uses this contract:
 - no preloaded aliases or functions are required;
 - no specially prepared environment variables are required;
 - no filesystem contents are assumed;
-- `$0` may be used as the running Bash executable;
+- unquoted `$0` may be used when it expands to one command word resolving to
+  the running Bash executable;
+- nested Bash startup state is assumed not to intercept the bootstrap;
 - NUL bytes are excluded;
 - ordinary stdin does not need to survive the bootstrap.
 
@@ -35,7 +37,7 @@ program, but it is a different result.
 | `%q` decoder | ` $'\012456` | 10 | generated quoting fragments | decoder is complex |
 | Current-shell | ` $'\01456` | 9 | construct `eval` | modifies current shell |
 | Direct child Bash | ` $'\015c` | 8 | `$0 -c ...` | requires a separator and `c` |
-| Nested here-strings | `$'\<015` | 7 | `$0<<<...` | consumes stdin |
+| Generated `-c` stage | `$'\<015` | 7 | two `$0<<<...` re-entries, then `$0 -c` | consumes stdin |
 | Launcher-assisted | ` $'\015` | 7 | launcher sets `$0=eval` | not directly self-contained |
 
 All of these constructions are linear in input size. Alphabet reduction and
@@ -119,7 +121,7 @@ program is supplied as the `-c` argument.
 
 The cost is child-process execution and dependence on `$0`.
 
-## Seven characters: replace `-c` with a here-string
+## Seven characters: bootstrap `-c` through here-strings
 
 The decisive reduction was:
 
@@ -127,13 +129,56 @@ The decisive reduction was:
 $0<<<$'NEXT_STAGE'
 ```
 
-This removes both the literal `c` and the separator required by `$0 -c`.
+This removes both the literal `c` and the separator required by a direct outer
+`$0 -c` command.
 
 The new `<` character costs one alphabet slot, producing a net reduction from
 eight to seven.
 
-This version is directly pasteable, but nested Bash processes read their source
-from stdin. The original program therefore receives EOF.
+The current encoder uses two such parser re-entries. The generated second stage
+is equivalent to:
+
+```text
+$0<TAB>$'-\143'<TAB>$'ORIGINAL_BYTES'
+```
+
+The tab separators and the octal digits spelling `c` are constructed at an
+intermediate level, so they do not enlarge the outer alphabet. The final Bash
+receives the original bytes as its `-c` command string.
+
+An earlier seven-character implementation used a third here-string followed by
+`builtin eval --`. It was correct under the stated clean-environment contract,
+but substantially larger. It also protected against a function named `eval`
+without protecting against a function named `builtin` itself.
+
+This version is directly pasteable, but the first nested Bash already reads its
+source from stdin. The original program therefore receives EOF even though its
+own source is ultimately supplied with `-c`.
+
+## Output-length reductions within the seven-character alphabet
+
+The alphabet-size result and the output-length result are separate. The current
+encoder shortens the same seven-character construction in several ways:
+
+- ANSI-C octal escapes use one to three digits rather than always using three;
+- decoder-safe payload bytes remain literal;
+- leading-zero arithmetic constants exploit Bash's octal interpretation;
+- one arithmetic expansion can generate up to three adjacent decimal digits;
+- the decoder uses backslash-quoted word fragments instead of wrapping every
+  literal run in another ANSI-C word.
+
+Examples of the arithmetic spellings are:
+
+```text
+2 -> $((1<<1))
+3 -> $((010-5))
+6 -> $((11-5))
+7 -> $((010-1))
+143 -> $((151-010))
+```
+
+These changes reduced the 20-byte README example from 5,555 encoded characters
+to 511 without changing the seven-character alphabet or the execution contract.
 
 ## Seven characters with a launcher
 
@@ -238,7 +283,7 @@ The seven-character construction uses:
 - ANSI-C quoted strings;
 - arithmetic expansion;
 - here-strings;
-- the `builtin` and `eval` builtins.
+- Bash's `-c` invocation option.
 
 These are longstanding Bash features. Nevertheless, repository CI should test:
 
@@ -252,7 +297,7 @@ an actual Bash 3.2 process is the stronger test.
 
 ## Semantic comparison
 
-| Property | 7-char here-string | 8-char `$0 -c` | 9-char current-shell |
+| Property | 7-char generated `-c` | 8-char direct `$0 -c` | 9-char current-shell |
 |---|---|---|---|
 | Directly pasteable | yes | yes | yes |
 | Uses child Bash | yes | yes | no |
@@ -269,9 +314,10 @@ The most useful next investigations are:
 2. Model quote removal and parser re-entry formally rather than only as byte
    reachability.
 3. Search for a six-character pair that constructs both sides of a delimiter.
-4. Separate minimum alphabet size from minimum output length for each alphabet.
-5. Add real cross-version CI results and benchmark data.
-6. Record reproducible search programs and machine-readable result files.
+4. Prove or improve the bounded arithmetic synthesis used for output length.
+5. Separate minimum alphabet size from minimum output length for each alphabet.
+6. Add real cross-version CI results and benchmark data.
+7. Record reproducible search programs and machine-readable result files.
 
 A six-character result should be treated as unverified until it executes
 arbitrary non-NUL Bash source under a clearly stated, reproducible contract.

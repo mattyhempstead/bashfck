@@ -213,7 +213,10 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     args = parse_args(argv)
 
     try:
-        import matplotlib.pyplot as plt
+        import matplotlib  # type: ignore[import-not-found]
+
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt  # type: ignore[import-not-found]
     except ImportError as error:
         raise SystemExit(
             "matplotlib is required: python3 -m pip install matplotlib"

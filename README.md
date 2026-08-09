@@ -50,14 +50,14 @@ Output:
 Hello, World!
 ```
 
-To run the full seven-character encoding for `echo 'Hello, World!'`, start a
-Bash terminal and copy and paste this line into it:
+To run the full seven-character encoding, start a Bash terminal and copy and
+paste this line into it:
 
 ```bash
-$0<<<$'$0<<<$\'$0<<<$\\\'\\\\1\'$\050\0505\0551\051\051$\050\0501\055\050\0551\051\051\051$\'\\\\1\'$\050\0505\055\050\0551\051\051\051$\'5\\\\151\\\\15\'$\050\0505\0551\051\051$\'\\\\1\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\151\\\\15\'$\050\0505\055\050\0551\051\051\051$\'\\\\0\'$\050\0505\0551\051\051$\'0\\\\1\'$\050\0505\0551\051\051$\'5\\\\1\'$\050\0505\055\050\0551\051\051\051$\050\0505\055\050\0551\051\051\051$\'\\\\1\'$\050\0505\0551\051\051$\'1\\\\15\'$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\0551\051\051$\'0\\\\055\\\\055\\\\0\'$\050\0505\0551\051\051$\'0\\\\0\'$\050\0505\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\0551\051\051$\050\0505\055\050\0551\051\055\050\0551\051\051\051$\'\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'5\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\0551\051\051$\'\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\'5\\\\0\'$\050\0505\055\050\0551\051\051\051$\'0\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\'5\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\055\050\0551\051\055\050\0551\051\051\051$\'\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'0\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'0\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'0\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\055\050\0551\051\055\050\0551\051\051\051$\'\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\'0\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'5\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\'5\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\'5\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\'5\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\055\050\0551\051\055\050\0551\051\051\051$\'\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'0\\\\0\'$\050\0505\055\050\0551\051\051\051$\'5\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'0\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'0\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0501\055\050\0551\051\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\055\050\0551\051\055\050\0551\051\051\051$\'\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\'5\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\055\050\0551\051\055\050\0551\051\051\051$\'\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\055\050\0551\051\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0501\055\050\0551\051\051\051$\'\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\'5\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'0\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'1\\\\1\'$\050\0505\0551\0551\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\'0\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\0551\051\051$\'\\\\0\'$\050\0505\055\050\0551\051\051\051$\050\0505\055\050\0551\051\055\050\0551\051\051\051$\'\\\\0\'$\050\0505\0551\051\051$\050\0505\055\050\0551\051\055\050\0551\051\051\051$\'\\\'\''
+$0<<<$'$0<<<\\$0\\\11\\$\\\'\55\\\\$\50\050151\055010\51\51\\\'\\\11\\$\\\'\\\\1$\50\050055\51\51\\\\$\50\050151\055010\51\51\150\\\\15$\50\050010\0551\51\51\\\\$\50\050050\51\51\\\\\\\'\110\\\\1$\50\050055\51\51\\\\$\50\050155\0551\51\51\\\\$\50\050155\0551\51\51\\\\15$\50\050010\0551\51\51\\\\$\50\05055\0551\51\51\\\\$\50\050050\51\51\\\\1$\50\0500115\05550\51\51\\\\15$\50\050010\0551\51\51\\\\1$\50\0500110\05510\51\51\\\\$\50\050155\0551\51\51\\\\$\50\050155\05511\51\51\\\\$\50\050051\51\51\\\\\\\'\\\''
 ```
 
-The encoded line is 5,555 characters long and its distinct character set is
+The encoded line is 511 characters long and its distinct character set is
 exactly:
 
 ```text
@@ -66,16 +66,14 @@ $'015<\
 
 ## Core method
 
-The construction is a sequence of Bash programs that decode and feed the next
-program back into Bash.
-
-At a high level:
+The construction decodes source through two here-string parser re-entries, then
+passes the exact original bytes to a final Bash with `-c`:
 
 ```text
 seven-character source
-    -> stage-one Bash source
-    -> stage-two Bash source
-    -> builtin eval -- $'original bytes'
+    -> arithmetic decoder source
+    -> $0<TAB>$'-\143'<TAB>$'original bytes'
+    -> original program
 ```
 
 ### 1. Use ANSI-C quoting as a byte constructor
@@ -86,78 +84,78 @@ such as `\145` decode to individual bytes.
 A normal unrestricted encoding could therefore represent source as:
 
 ```bash
-$'\145\143\150\157\040\047\110\145\154\154\157\054\040\127\157\162\154\144\041\047'
+$'\145\143\150\157\40\47\110\145\154\154\157\54\40\127\157\162\154\144\41\47'
 ```
 
-That spells `echo 'Hello, World!'`, but it uses all eight octal digits.
+That spells `echo 'Hello, World!'`. Bash accepts one to three octal digits, so
+leading zeroes are omitted unless the following character would make an escape
+ambiguous. Bytes that the outer decoder can carry safely are left literal.
 
-The seven-character outer layer may write only octal digits `0`, `1`, and `5`
-directly.
+The outer layer may still write only octal digits `0`, `1`, and `5` directly.
 
-### 2. Recover the punctuation needed for arithmetic
+### 2. Generate missing digits with arithmetic
 
-Those three digits are enough to encode the punctuation required by Bash
-arithmetic expansion:
+The outer layer can reconstruct the punctuation used by arithmetic expansion:
 
 ```text
-( -> 050
-) -> 051
-- -> 055
+( -> 50
+) -> 51
+- -> 55
 ```
 
-After the outer ANSI-C string is decoded, the next stage can contain `$((...))`
-expressions even though `(`, `)`, and `-` never occur literally in the final
-seven-character program.
-
-The missing octal digits are generated as arithmetic results:
+Missing decimal digits are generated by expressions containing only
+outer-reconstructable characters:
 
 ```text
-2 -> $((1-(-1)))
-3 -> $((5-1-1))
+2 -> $((1<<1))
+3 -> $((010-5))
 4 -> $((5-1))
-6 -> $((5-(-1)))
-7 -> $((5-(-1)-(-1)))
+6 -> $((11-5))
+7 -> $((010-1))
+8 -> $((010))
+9 -> $((011))
 ```
 
-These expressions are part of an intermediate stage. They are themselves
-encoded by the outer seven-character layer.
+Bash interprets arithmetic constants beginning with `0` as octal. The encoder
+also groups up to three output digits into one expansion when that is shorter.
+For example, `$((151-010))` emits the text `143`.
 
-### 3. Re-enter the Bash parser with a here-string
+These expressions occur only in an intermediate program. The outer ANSI-C word
+reconstructs their punctuation using the seven-character alphabet.
 
-Expansion results are not automatically reparsed as fresh shell syntax in the
-same parsing pass. The construction therefore starts another Bash and gives it
-the generated stage as standard input:
+### 3. Re-enter the parser twice
+
+Expansion results are not reparsed as fresh Bash syntax in the same parsing
+pass. The outer program therefore starts another Bash and gives it decoder
+source on standard input:
 
 ```bash
-$0<<<$'NEXT_STAGE'
+$0<<<$'DECODER'
 ```
 
-`$0` is used as the Bash executable and `<<<` is a Bash here-string. This parser
-re-entry happens in three nested here-string layers.
+The decoder uses the same form once more to submit a generated execution stage.
+That stage is equivalent to:
 
-Using `<<<` is the reduction that removes the separator and the literal `c`
-required by the earlier `$0 -c ...` approach.
-
-### 4. Evaluate the exact original bytes
-
-The final generated stage is equivalent to:
-
-```bash
-builtin eval -- $'\145\143\150\157\040\047\110\145\154\154\157\054\040\127\157\162\154\144\041\047'
+```text
+$0<TAB>$'-\143'<TAB>$'ORIGINAL_BYTES'
 ```
 
-`builtin` selects Bash's real `eval` rather than a function with the same name.
-`--` prevents source beginning with `-` from being interpreted as an option.
+The tabs are command separators, and `$'-\143'` expands to the argument `-c`.
+The final Bash consequently reads the following word as its command string.
 
-The original source is inside an ANSI-C quoted word, so the newline appended by
-the final here-string cannot alter source ending in a backslash.
+### 4. Execute the exact original bytes
+
+The original source is expanded from one ANSI-C quoted word and supplied as the
+argument consumed by Bash's `-c` option. This preserves source ending in a
+backslash and source beginning with `-` without an `eval` wrapper or `--` guard.
 
 Relevant Bash documentation:
 
 - [ANSI-C quoting](https://www.gnu.org/software/bash/manual/html_node/ANSI_002dC-Quoting.html)
 - [Arithmetic expansion](https://www.gnu.org/software/bash/manual/html_node/Arithmetic-Expansion.html)
+- [Shell arithmetic](https://www.gnu.org/software/bash/manual/html_node/Shell-Arithmetic.html)
 - [Here-strings and redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
-- [The `eval` builtin](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html)
+- [Invoking Bash with `-c`](https://www.gnu.org/software/bash/manual/html_node/Invoking-Bash.html)
 
 ## Usage
 
@@ -201,10 +199,13 @@ name.
 The core seven-character result assumes:
 
 1. The output is parsed by Bash.
-2. `$0` resolves to an executable Bash name or path, such as `bash` or
-   `/bin/bash`.
-3. Input contains no NUL byte.
-4. The encoded source is trusted; this is encoding and obfuscation, not a
+2. Unquoted `$0` expands to one command word that resolves to Bash, such as
+   `bash` or `/bin/bash`; whitespace, glob characters, or a same-named shell
+   function can violate this assumption.
+3. Nested non-interactive Bash startup state, including `BASH_ENV` and imported
+   functions, does not intercept `$0` or alter the bootstrap.
+4. Input contains no NUL byte.
+5. The encoded source is trusted; this is encoding and obfuscation, not a
    security boundary.
 
 The nested here-strings consume standard input. The original program therefore
@@ -214,14 +215,15 @@ The construction preserves the original source bytes, stdout, stderr, and final
 exit status. It does not preserve parent-shell variables, functions, positional
 arguments, traps, `$0`, `BASH_SOURCE`, or normal stdin.
 
-The implementation uses longstanding Bash features, but compatibility claims
-should be backed by CI against both current Bash and macOS `/bin/bash` 3.2.
+The implementation uses longstanding Bash features. The test suite exercises
+macOS `/bin/bash` 3.2 when run on macOS, but compatibility claims should also be
+backed by CI against current Bash on Linux.
 
 ## Output growth
 
-Each input byte expands into a bounded sequence of octal digits and arithmetic
-fragments, so output size is `O(n)`. The exact coefficient varies because octal
-digits `2`, `3`, `4`, `6`, and `7` are more expensive than `0`, `1`, and `5`.
+Each input byte expands into a bounded sequence of literals, octal digits, and
+arithmetic fragments, so output size is `O(n)`. The exact coefficient varies
+with the source bytes and with opportunities to group generated digits.
 
 ![Encoded output size](output-size.png)
 
@@ -235,3 +237,6 @@ python3 plot_growth.py
 The plotting script measures a curated list of distinct Bash programs across
 many source lengths, then fits a linear trend. It writes `output-size.png` by
 default and prints the named measurements as CSV.
+
+Additional search history, prior constructions, semantic trade-offs, and the
+six-character investigation are recorded in [`RESEARCH.md`](RESEARCH.md).
